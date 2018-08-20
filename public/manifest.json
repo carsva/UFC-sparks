@@ -1,0 +1,13 @@
+{
+  "short_name": "UFC sparks",
+  "name": "UFC sparks",
+  "icons": [{
+    "src": "/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ff9999",
+  "background_color": "#ff9999"
+}
