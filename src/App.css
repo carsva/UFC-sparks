@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Modern+Antiqua');
 
+.container {
+    margin-top: 5em;
+    text-align: center;
+}
+
+.ordinary {
+ width: 50%;
+ margin: auto;
+}
+
+.fighter {
+width: 50%;
+margin: auto;
+}
+
+h1 {
+
+}
+
 @media only screen and (max-width: 600px) {
   
 }
