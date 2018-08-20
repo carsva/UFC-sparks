@@ -1,39 +1,29 @@
 import React, { Component } from 'react';
 import { AppConsumer } from '../AppContext';
-import axios from 'axios';
-
-
 
 class Home extends Component {
-
-  ufc() {
-   axios.get('http://ufc-data-api.ufc.com/api/v1/us/fighters')
-  .then(function (response) {
-    var fighters = response.data;
-    return(fighters);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
-  }
-
-  
-
   render() {
-    
     return (
       <AppConsumer>
         {context => (
           <div className="container">
-            <div className="fighter">
-              <h1>Fighter1</h1> vs <h1>Fighter2</h1>
+            <div>
+              <div className="fighter">
+                <img src={context.state.firstFighterImage} />
+                <h1>{context.state.firstFighter}</h1>
+              </div>
+              <h1>vs</h1>
+              <div className="fighter">
+                <img src={context.state.secondFighterImage} />
+                <h1>{context.state.secondFighter}</h1>
+              </div>
             </div>
             <div className="ordinary">
-              <button onClick={this.ufc}>Test</button>
+              <button onClick={context.test}>Test</button>
+            </div>
+            <div className="state space">
+              <h3>Data that lives in the context</h3>
+              <pre>{JSON.stringify(context, null, 4)}</pre>
             </div>
           </div>
         )}
