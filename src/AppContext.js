@@ -6,11 +6,14 @@ export const AppContext = React.createContext('plant');
 export class AppProvider extends React.Component {
   state = {
     test: 'test',
-    fighters: {},
-    firstFighter: "",
-    secondFighter: "",
-    firstFighterImage: "",
-    secondFighterImage: "",
+    firstFighter: {
+      first_name: "The first ",
+      last_name: "fighter",
+    },
+    secondFighter: {
+      first_name: "The second ",
+      last_name: "fighter",
+    },
   };
 
     test = () => {
@@ -23,10 +26,8 @@ export class AppProvider extends React.Component {
               var secondFighter = fighters[secondRandomNumber]
               console.log(firstFighter)
               this.setState({
-                firstFighter: firstFighter.first_name + " " + firstFighter.last_name,
-                secondFighter: secondFighter.first_name + " " + secondFighter.last_name,
-                firstFighterImage: firstFighter.thumbnail,
-                secondFighterImage: secondFighter.thumbnail
+                firstFighter: firstFighter,
+                secondFighter: secondFighter,
               });
           })
           .catch( (error) => {
